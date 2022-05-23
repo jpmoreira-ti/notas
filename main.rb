@@ -21,6 +21,7 @@ letras.each do |i|
 
     @dados = {}
     @dados = { nome: alunos[j].nil? ? '' : alunos[j].split(':')[1][1..-2].to_s, inscricao: alunos[j + 1].nil? ? '' : alunos[j + 1].split(':')[1][1..-2].to_s, nota_ponderada: alunos[j + 2].nil? ? '' : alunos[j + 2].split(':')[1][1..-2].to_f }
-    Arquivos.carrega_excel(j, @dados)
+    puts @dados
+    #Arquivos.carrega_excel(j, @dados)
   end
 end
