@@ -7,13 +7,15 @@ class Arquivos
     end
   end
 
-  def self.carrega_excel(letra, dados)
+  def self.carrega_excel(i, dados)
     workbook = FastExcel.open(DATA_CONVERTED, constant_memory: true)
     workbook.default_format.set(
       font_size: 0, # user's default
       font_family: 'Arial'
     )
-    worksheet = workbook.add_worksheet(letra)
+
+    worksheet = workbook.add_worksheet(i)
+    worksheet.auto_width = true
     worksheet.append_row(%w[nome inscricao nota_ponderada])
     worksheet.append_row([dados[:nome], dados[:inscricao], dados[:nota_ponderada]])
     workbook.close
