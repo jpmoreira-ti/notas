@@ -7,17 +7,31 @@ class Arquivos
     end
   end
 
-  def self.carrega_excel(i, dados)
-    workbook = FastExcel.open(DATA_CONVERTED, constant_memory: true)
-    workbook.default_format.set(
-      font_size: 0, # user's default
-      font_family: 'Arial'
-    )
-
-    worksheet = workbook.add_worksheet(i)
-    worksheet.auto_width = true
-    worksheet.append_row(%w[nome inscricao nota_ponderada])
-    worksheet.append_row([dados[:nome], dados[:inscricao], dados[:nota_ponderada]])
-    workbook.close
+  def self.carrega_excel(letra, dados_aluno, conta_aluno)
+    Spreadsheet.client_encoding = 'UTF-8'
+    format = Spreadsheet::Format.new color: :black,
+                                     weight: :bold,
+                                     size: 14
+    book = ''
+    sheet = ''
+    if File.exist?(DATA_CONVERTED)
+      book = Spreadsheet.open DATA_CONVERTED
+      sheet = book.worksheet letra
+      if sheet.name != letra
+        book = Spreadsheet::Workbook.new
+        sheet = book.create_worksheet name: letra
+        sheet.row(0).concat %w[NOME INSCRICAO NOTA_PONDERADA]
+        sheet.row(0).default_format = format
+      end
+    else
+      book = Spreadsheet::Workbook.new
+      sheet = book.create_worksheet name: letra
+      sheet.row(0).concat %w[NOME INSCRICAO NOTA_PONDERADA]
+      sheet.row(0).default_format = format
+    end
+    sheet[conta_aluno, 0] = dados_aluno[:nome]
+    sheet[conta_aluno, 1] = dados_aluno[:inscricao]
+    sheet[conta_aluno, 2] = dados_aluno[:nota_ponderada]
+    book.write DATA_CONVERTED
   end
 end

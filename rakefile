@@ -1,0 +1,7 @@
+desc 'Read Notes'
+task :read_notes do
+  puts '========================== START =========================='
+  puts 'Reading notes ...'
+  system ruby 'main.rb'
+  puts '========================== END ============================'
+end
