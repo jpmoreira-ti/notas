@@ -17,12 +17,6 @@ class Arquivos
     if File.exist?(DATA_CONVERTED)
       book = Spreadsheet.open DATA_CONVERTED
       sheet = book.worksheet letra
-      if sheet.name != letra
-        book = Spreadsheet::Workbook.new
-        sheet = book.create_worksheet name: letra
-        sheet.row(0).concat %w[NOME INSCRICAO NOTA_PONDERADA]
-        sheet.row(0).default_format = format
-      end
     else
       book = Spreadsheet::Workbook.new
       sheet = book.create_worksheet name: letra
