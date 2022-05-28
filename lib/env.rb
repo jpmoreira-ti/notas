@@ -9,4 +9,3 @@ URL = YAML.load_file("#{File.expand_path('../', File.dirname(__FILE__))}/config/
 ENDPOINT = YAML.load_file("#{File.expand_path('../', File.dirname(__FILE__))}/config/endpoints.yml")
 DATA_CSV = "#{File.expand_path('../', File.dirname(__FILE__))}/data/NotasPism1.csv"
 DATA_CONVERTED = "#{File.expand_path('../', File.dirname(__FILE__))}/data/NotasPism1.xls"
-LETTERS = YAML.load_file("#{File.expand_path('../', File.dirname(__FILE__))}/commons/letras.yml")
