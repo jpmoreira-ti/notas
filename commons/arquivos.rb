@@ -27,5 +27,6 @@ class Arquivos
     sheet[conta_aluno, 1] = dados_aluno[:inscricao]
     sheet[conta_aluno, 2] = dados_aluno[:nota_ponderada]
     book.write DATA_CONVERTED
+    puts "Saved to #{letra}.xls"
   end
 end

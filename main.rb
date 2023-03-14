@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 require_relative 'lib/env'
-require_relative 'service/alunos'
+require_relative 'service/pism'
 require_relative 'commons/arquivos'
 
-letras = LETTERS['letras']
-#letras = %w[A B]
+#letras = LETTERS['letras']
+letras = %w[A B]
 @alunos = OpenStruct.new
 @dados = {}
 @conta_aluno = 0
 
 letras.each do |i|
-  @alunos.response = API::Rest::Pism.new.consulta_aluno(i)
+  @alunos.response = Pism.consulta_aluno(i)
   next unless @alunos.response.code.eql?(200)
 
   dados = @alunos.response.split('data')[22][4..-2572].to_s
