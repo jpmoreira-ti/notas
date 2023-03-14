@@ -1,9 +1,13 @@
 # NOTAS
+## OBS:
+Necessário criar as worksheets na mão atualmente
 
-Parametros de utilização da gem addressable
-uri.scheme
-#=> "http"
-uri.host
-#=> "example.com"
-uri.path
-#=> "/path/to/resource/"
+### EXECUCAO
+``sh
+rake 'read_notes'
+``sh
+
+### TODO
+Melhorar a criaçao da planilha
+
+
