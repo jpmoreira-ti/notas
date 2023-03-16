@@ -1,14 +1,4 @@
 class Arquivos
-  def self.carrega_csv(param)
-    data_csv = "#{File.expand_path('../', File.dirname(__FILE__))}/data/pism1/NotasPism1.csv"
-
-    File.delete(data_csv) if File.exist?(data_csv)
-    File.open(data_csv, 'w+') do |out|
-      out.puts param
-      out.close
-    end
-  end
-
   def self.carrega_excel(letra, dados_aluno, conta_aluno)
     data_xls = "#{File.expand_path('../', File.dirname(__FILE__))}/data/pism1/Notas_#{letra}.xls"
 
@@ -20,10 +10,10 @@ class Arquivos
     sheet = ''
     if File.exist?(data_xls)
       book = Spreadsheet.open data_xls
-      sheet = book.worksheet "Notas"
+      sheet = book.worksheet 'Notas'
     else
       book = Spreadsheet::Workbook.new
-      sheet = book.create_worksheet name: "Notas"
+      sheet = book.create_worksheet name: 'Notas'
       sheet.row(0).concat %w[NOME INSCRICAO NOTA_PONDERADA]
       sheet.row(0).default_format = format
     end

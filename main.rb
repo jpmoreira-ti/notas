@@ -16,8 +16,6 @@ letras.each do |i|
   dados = @alunos.response.split('data')[22][4..-2572].to_s
   alunos = dados.nil? ? '' : dados.split(',')
 
-  Arquivos.carrega_csv(alunos)
-
   (0..alunos.count - 1).each do |j|
     next unless alunos[j].nil? ? 'N/A' : alunos[j].split(':')[0][2..-2].to_s.eql?('nome')
 
