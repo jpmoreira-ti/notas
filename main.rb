@@ -4,8 +4,7 @@ require_relative 'lib/env'
 require_relative 'service/pism'
 require_relative 'commons/arquivos'
 
-#letras = LETTERS['letras']
-letras = %w[A B]
+letras = %w[Y Z]
 @alunos = OpenStruct.new
 @dados = {}
 @conta_aluno = 0

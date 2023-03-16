@@ -1,13 +1,21 @@
-# NOTAS
-## OBS:
-Necessário criar as worksheets na mão atualmente
+# RECUPERA NOTAS
+Projeto em [Ruby](https://www.ruby-lang.org/pt/) para recuperar notas via site.
+
+### PRE-REQUISITOS
+- Instalar o ruby
+
+### DEPENDENCIAS
+- Executar os comandos
+
+    ```yml
+    bundle init
+    bundle install
+    ```
 
 ### EXECUCAO
-``sh
-rake 'read_notes'
-``
-
-### TODO
-Melhorar a criaçao das worksheets
+- Executar os comandos
+    ```yml
+    rake 'read_notes'
+    ```
 
 
