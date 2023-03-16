@@ -31,6 +31,6 @@ class Arquivos
     sheet[conta_aluno, 1] = dados_aluno[:inscricao]
     sheet[conta_aluno, 2] = dados_aluno[:nota_ponderada]
     book.write data_xls
-    puts "Aluno #{@conta_aluno} salvo!"
+    puts "Aluno #{conta_aluno} salvo!"
   end
 end
