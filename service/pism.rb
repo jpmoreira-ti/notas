@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Pism
   include HTTParty
 
@@ -10,4 +11,3 @@ class Pism
     get(base_uri, body: {})
   end
 end
-
