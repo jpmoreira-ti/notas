@@ -6,7 +6,7 @@ class Pism
   default_timeout 240
 
   def self.consulta_aluno(endpoint)
-    base_uri = "http://www4.vestibular.ufjf.br/2022/notaspism1_aposrevisao/#{endpoint}.html"
+    base_uri = "http://www4.vestibular.ufjf.br/2023/notaspism1/#{endpoint}.html"
     get(base_uri, body: {})
   end
 end
