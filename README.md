@@ -5,7 +5,7 @@ Projeto em [Ruby](https://www.ruby-lang.org/pt/) para recuperar notas via site. 
 - Instalar o ruby
 
 ### DEPENDENCIAS
-- Executar os comandos
+- Executar os Comandos
 
     ```yml
     bundle init
